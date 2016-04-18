@@ -1,0 +1,20 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="northwind.northwindapp.products">
+	<Page id="idProducts" showHeader="true" showNavButton="true" navButtonPress="navBack" >
+		<content>
+			<TileContainer id="idProductsContainer" tiles="{/value}" height="25rem">
+				<StandardTile id="idProductsTiles" class="standardTile"
+					number="{ProductID}" numberUnit="Product ID"
+					title="{UnitsInStock} X {QuantityPerUnit}" icon="sap-icon://meal"
+					info="{ProductName}" press="onPressProduct"
+					infoState="{path: 'Discontinued',formatter: 'northwind.util.Formatter.getInfoState'}"
+					visible="true" />
+			</TileContainer>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

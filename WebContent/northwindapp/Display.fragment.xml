@@ -1,0 +1,84 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" hSpacing="2" >
+		<l:content>
+			<f:Form id="idSupplierDisplay" minWidth="1024"
+				maxContainerCols="2" editable="false" class="isReadonly">
+				<f:title>
+					<core:Title />
+				</f:title>
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="3"
+						labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+						columnsM="1" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Supplier ID">
+								<f:fields>
+									<Text text="{/SupplierID}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Company Name">
+								<f:fields>
+									<Text text="{/CompanyName}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Contact Name">
+								<f:fields>
+									<Text text="{/ContactName}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Contact Title">
+								<f:fields>
+									<Text text="{/ContactTitle}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Address">
+								<f:fields>
+									<Text text="{/Address}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="City">
+								<f:fields>
+									<Text text="{/City}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Region">
+								<f:fields>
+									<Text text="{/Region}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Postal Code">
+								<f:fields>
+									<Text text="{/PostalCode}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Country">
+								<f:fields>
+									<Text text="{/Country}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Phone">
+								<f:fields>
+									<Text text="{/Phone}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Fax">
+								<f:fields>
+									<Text text="{/Fax}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Home Page">
+								<f:fields>
+									<Text text="{/HomePage}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

@@ -1,0 +1,137 @@
+<core:View xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" controllerName="northwind.northwindapp.order">
+	<Page id="idPageOrder" showHeader="true" showNavButton="true"
+		navButtonPress="navBack" title="Order" >
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" hSpacing="2" width="auto">
+				<l:content>
+					<f:Form id="idOrderDisplay" minWidth="1024"
+						maxContainerCols="2" editable="false" class="isReadonly">
+						<f:title>
+							<core:Title />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanL="3"
+								labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+								columnsM="1" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idOrder">
+								<f:title>
+									<core:Title level="H3" text="Order"></core:Title>
+								</f:title>
+								<f:formElements>
+									<f:FormElement label="Order ID">
+										<f:fields>
+											<Text id="idOrderId" text="{/OrderID}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Customer ID">
+										<f:fields>
+											<Text text="{/CustomerID}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Employee ID">
+										<f:fields>
+											<Text text="{/EmployeeID}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Order Date">
+										<f:fields>
+											<Text
+												text="{path: '/OrderDate',formatter: 'northwind.util.Formatter.getDate'}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Required Date">
+										<f:fields>
+											<Text
+												text="{path: '/RequiredDate',formatter: 'northwind.util.Formatter.getDate'}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Shipped Date">
+										<f:fields>
+											<Text
+												text="{path: '/ShippedDate',formatter: 'northwind.util.Formatter.getDate'}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="ShipVia">
+										<f:fields>
+											<Text text="{/ShipVia}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Freight">
+										<f:fields>
+											<Text text="{/Freight}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Ship Name">
+										<f:fields>
+											<Text text="{/ShipName}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Ship Address">
+										<f:fields>
+											<Text text="{/ShipAddress}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Ship City">
+										<f:fields>
+											<Text text="{/ShipCity}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Ship Region">
+										<f:fields>
+											<Text text="{/ShipRegion}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Ship PostalCode">
+										<f:fields>
+											<Text text="{/ShipPostalCode}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Ship Country">
+										<f:fields>
+											<Text text="{/ShipCountry}" />
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer id="idShipper">
+								<f:title>
+									<core:Title level="H4" text="Shipper"></core:Title>
+								</f:title>
+								<f:formElements>
+									<f:FormElement label="Shipper ID">
+										<f:fields>
+											<Text text="{/ShipperID}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Company Name">
+										<f:fields>
+											<Text text="{/CompanyName}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Phone">
+										<f:fields>
+											<Text text="{/Phone}" />
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="idCustomerButton" text="Customer Detail" press="handleCustomerPress" />
+					<Button id="idEmployeeButton" text="Employee Detail" press="handleEmployeePress" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
+
+	

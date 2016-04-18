@@ -1,0 +1,54 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="northwind.northwindapp.orderDetail">
+	<Page id="idOrdeDetail" title="order page">
+		<content>
+			<Table id="idOrderDetailTable" items="{/value}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Orders" level="H2" />
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button tooltip="View Settings" icon="sap-icon://drop-down-list"
+							press="handleViewSettingsDialogButtonPressed" />
+					</Toolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<Toolbar id="vsdFilterBar" active="true" visible="false"
+						press="[handleViewSettingsDialogFilterBarPressed, views.control.tableViewSettingsDialog]">
+						<Label id="vsdFilterLabel" text="?" />
+					</Toolbar>
+				</infoToolbar>
+				<columns>
+					<Column id="idOrderID" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Order ID" />
+					</Column>
+					<Column id="idUnitPrice" minScreenWidth="Tablet"
+						demandPopin="true">
+						<Text text="UnitPrice" />
+					</Column>
+					<Column id="idQuantity" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Quantity" />
+					</Column>
+					<Column id="idDiscount" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Discount" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Link text="{OrderID}" press="handleLinkPress" />
+							<Text text="{UnitPrice}" />
+							<Text text="{Quantity}" />
+							<Text text="{Discount}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,174 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table" xmlns:c="sap.ui.core" controllerName="northwind.northwindapp.employee">
+	<Page id="idEmployee" showHeader="true" showNavButton="true"
+		navButtonPress="navBack" title="" >
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" hSpacing="2" width="auto">
+				<l:content>
+					<f:Form id="idEmployeeDisplay" minWidth="1024"
+						maxContainerCols="2" editable="false" class="isReadonly">
+						<f:title>
+							<core:Title />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanL="3"
+								labelSpanM="3" emptySpanL="2" emptySpanM="2" columnsL="1"
+								columnsM="1" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idEmployeeContainer">
+								<f:title>
+									<core:Title level="H3" text="Employee Details"></core:Title>
+								</f:title>
+								<f:formElements>
+									<f:FormElement label="Employee ID">
+										<f:fields>
+											<Text text="{/EmployeeID}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Last Name">
+										<f:fields>
+											<Text text="{/LastName}">
+												<layoutData>
+													<f:GridElementData hCells="auto" />
+												</layoutData>
+											</Text>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="First Name">
+										<f:fields>
+											<Text text="{/FirstName}">
+												<layoutData>
+													<f:GridElementData hCells="auto" />
+												</layoutData>
+											</Text>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Title">
+										<f:fields>
+											<Text text="{/Title}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Title Of Courtesy">
+										<f:fields>
+											<Text text="{/TitleOfCourtesy}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Birth Date">
+										<f:fields>
+											<Text
+												text="{path: '/BirthDate',formatter: 'northwind.util.Formatter.getDate'}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Hire Date">
+										<f:fields>
+											<Text
+												text="{path: '/HireDate',formatter: 'northwind.util.Formatter.getDate'}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Address">
+										<f:fields>
+											<Text text="{/Address}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="City">
+										<f:fields>
+											<Text text="{/City}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Region">
+										<f:fields>
+											<Text text="{/Region}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Postal Code">
+										<f:fields>
+											<Text text="{/PostalCode}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Country">
+										<f:fields>
+											<Text text="{/Country}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Home Phone">
+										<f:fields>
+											<Text text="{/HomePhone}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Extension">
+										<f:fields>
+											<Text text="{/Extension}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement id="idReportId" label="Reports To">
+										<f:fields>
+											<Text text="{/ReportsTo}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Notes">
+										<f:fields>
+											<Text text="{/Notes}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Photo">
+										<f:fields>
+											<c:HTML id="idImg" />
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:title>
+									<core:Title level="H4" text="Territory and Region"></core:Title>
+								</f:title>
+								<f:formElements>
+									<f:FormElement>
+										<f:fields>
+											<t:Table id="idTerritoryTable" selectionMode="None"
+												rows="{/value}" width="100%" visibleRowCount="{/length}">
+												<t:columns>
+													<t:Column width="7%">
+														<Label text="Territory ID" />
+														<t:template>
+															<Text text="{TerritoryID}" />
+														</t:template>
+													</t:Column>
+													<t:Column width="12%">
+														<Label text="Territory Description" />
+														<t:template>
+															<Text text="{TerritoryDescription}" />
+														</t:template>
+													</t:Column>
+													<t:Column width="6%">
+														<Label text="Region ID" />
+														<t:template>
+															<Text text="{RegionID}" />
+														</t:template>
+													</t:Column>
+													<t:Column width="13%">
+														<Label text="Region Description" />
+														<t:template>
+															<Text text="{RegionDescription}" />
+														</t:template>
+													</t:Column>
+												</t:columns>
+											</t:Table>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="idReportsToButton" text="Reports To" press="handleReportsToPress" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

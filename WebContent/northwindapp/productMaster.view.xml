@@ -1,0 +1,28 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="northwind.northwindapp.productMaster">
+	<Page id="idProductMaster" title="Title" >
+		<content>
+			<ScrollContainer horizontal="false"	vertical="true" >
+				<content>
+					<List id="idProductMasterList" mode="SingleSelectMaster"
+						select="productItemPress" includeItemInSelection="true"
+						rememberSelections="false" growing="true" growingThreshold="20"
+						busyIndicatorDelay="500" enableBusyIndicator="true">
+						<CustomListItem type="Navigation">
+							<Label class="listLable" text="Order Details" />
+						</CustomListItem>
+						<CustomListItem type="Navigation">
+							<Label class="listLable" text="Supplier" />
+						</CustomListItem>
+
+					</List>
+				</content>
+			</ScrollContainer>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

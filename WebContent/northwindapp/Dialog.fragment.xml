@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="viewSetting" confirm="handleConfirm" >
+		<filterItems>
+			<ViewSettingsCustomItem customControl="{/customcontrol}" text="Date" key="StartDate" multiSelect="false">
+				<customControl>
+					<DateRangeSelection delimiter="{delimiter}" change="handleChange" />
+				</customControl>
+			</ViewSettingsCustomItem>
+			<ViewSettingsFilterItem items="{/item}" text="Price" key="Price" multiSelect="false">
+				<items>
+					<ViewSettingsItem text="{text}" key="{key}" />
+				</items>							
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>
