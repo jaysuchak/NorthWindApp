@@ -5,7 +5,7 @@ sap.ui.core.UIComponent.extend("northwind.Component",{
 	metadata: {
 		name: "Northwind",
 		version: "1.0",
-		includes: [ "style/style.css", "util/Formatter.js", "src/Shell.js" ],
+		includes: [ "style/style.css", "util/Formatter.js" ],
 		dependencies: {
 			libs : [ "sap.m", "sap.ui.layout" ],
 			components : []
