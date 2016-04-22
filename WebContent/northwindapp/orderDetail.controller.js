@@ -48,45 +48,6 @@ sap.ui.define([
 																alert('Error in json call');
 															}
 												});
-												that._oDialog = sap.ui.xmlfragment(that.getView().getId(), "northwind.northwindapp.Dialog");
-												var viewSetting = that.byId("viewSetting");
-												var JSONModel2 = new sap.ui.model.json.JSONModel();
-												viewSetting.setModel(JSONModel2);
-												// JSON sample data
-												var data1 = {
-														item: [
-														       {
-													        	   key: "abc",
-													        	   text: "zzz"
-													           },
-													           {
-													        	   key:"def",
-													        	   text:"xxx"
-													           },
-													           {
-													        	   key:"ghi",
-													        	   text:"ccc"
-													           }
-													    ],
-													    customcontrol: [
-													                    {
-													                    	delimiter:"@"												                    	
-													                    }
-													    ]
-													};
-												/*var item=[];
-												var items={};
-												items["key"]="abc";
-												items["text"]="zzz";
-												item.push(items);
-												items["key"]="def";
-												items["text"]="xxx";
-												item.push(items);
-												items["key"]="ghi";
-												items["text"]="ccc";
-												item.push(items);
-												data1.push(item);*/
-												JSONModel2.setData(data1);
 											}
 										});
 					},
@@ -101,39 +62,6 @@ sap.ui.define([
 					},
 					getRouter : function() {
 						return sap.ui.core.UIComponent.getRouterFor(this);
-					},
-					handleViewSettingsDialogButtonPressed: function (oEvent) {
-						if (!this._oDialog) {
-							this._oDialog = sap.ui.xmlfragment(this.getView().getId(), "northwind.northwindapp.Dialog");
-						}
-						// toggle compact style
-						/*jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._oDialog);
-						var viewSetting = this.byId("filterItem");
-						var JSONModel = new sap.ui.model.json.JSONModel();
-						viewSetting.setModel(JSONModel);
-						var data1=[];
-						var customcontrol=[];
-						var customcontrols={};
-						var item=[];
-						var items={};
-						items["key"]="abc";
-						items["text"]="zzz";
-						item.push(items);
-						items["key"]="def";
-						items["text"]="xxx";
-						item.push(items);
-						items["key"]="ghi";
-						items["text"]="ccc";
-						item.push(items);
-						customcontrols["delimiter"]="-";
-						customcontrols["displayformat"]="dd/MM/yyyy";
-						customcontrol.push(customcontrols);
-						data1.push(item);
-						data1.push(customcontrol);
-						JSONModel.setData(data1);*/
-						
-						this._oDialog.open();
-						
 					},
 					handleChange: function (oEvent) {
 						var sFrom = oEvent.getParameter("from");
