@@ -62,7 +62,7 @@ sap.ui.controller("northwind.northwindapp.productMaster",
 						var oMasterList = this.getView().byId("idProductMasterList");
 						var aItem = oEvent.getParameter("listItem");
 						this.showDetail(aItem);
-						oMasterList.removeSelections(true);
+//						oMasterList.removeSelections(true);
 					},
 					showDetail : function(oItem) {
 						var bReplace = jQuery.device.is.phone ? false : true;						

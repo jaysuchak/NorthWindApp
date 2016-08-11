@@ -4,10 +4,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
 <script id="sap-ui-bootstrap" type="text/javascript"
-	src="./resources/sap-ui-core.js"
+	src="./resources/sap-ui-cachebuster/sap-ui-core.js"
 	data-sap-ui-libs="sap.m, sap.ui.layout, sap.suite.ui.commons, sap.ui.unified, sap.ui.ux3"
-	data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-appCacheBuster="./"
-	data-sap-ui-preload="" data-sap-ui-theme="sap_bluecrystal"
+	data-sap-ui-xx-bindingSyntax="complex" 
+	data-sap-ui-appCacheBuster="./"
+	data-sap-ui-theme="sap_bluecrystal"
 	data-sap-ui-resourceroots='{"northwind":"./"}'>	
 </script>
 <!-- only load the mobile "sap.m" and the "sap_bluecrystal" theme -->
@@ -20,7 +21,7 @@
 	sap.ui.getCore().attachInit(function() {
 		var shell = new sap.m.Shell({
 			app : new sap.ui.core.ComponentContainer({
-				url : "http://localhost:8084/NorthWindApp",
+				url : "http://localhost:8081/NorthWindApp",
 				height : "95%",
 				name : "northwind"
 			})
