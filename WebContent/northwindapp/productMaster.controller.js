@@ -59,10 +59,8 @@ sap.ui.controller("northwind.northwindapp.productMaster",
 						}
 					},
 					productItemPress : function(oEvent) {
-						var oMasterList = this.getView().byId("idProductMasterList");
 						var aItem = oEvent.getParameter("listItem");
 						this.showDetail(aItem);
-//						oMasterList.removeSelections(true);
 					},
 					showDetail : function(oItem) {
 						var bReplace = jQuery.device.is.phone ? false : true;						
@@ -82,7 +80,10 @@ sap.ui.controller("northwind.northwindapp.productMaster",
 									}, bReplace);
 							break;
 						}
-
+						var oMasterList = this.getView().byId("idProductMasterList");
+						if(jQuery.device.is.phone){
+							oMasterList.removeSelections(true);
+						}
 					},
 				/**
 				 * Similar to onAfterRendering, but this hook is invoked before
@@ -111,7 +112,7 @@ sap.ui.controller("northwind.northwindapp.productMaster",
 				 * 
 				 * @memberOf northwindapp.productMaster
 				 */
-				// onExit: function() {
-				//
-				// }
+				//	onExit: function() {
+				//					 
+				//	}
 				});

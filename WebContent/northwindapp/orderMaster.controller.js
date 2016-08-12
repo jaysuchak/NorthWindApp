@@ -89,11 +89,13 @@ sap.ui.define([
 							orderIdCustomer:oItem.getContent()[0].getText(),
 							customerId:customerId
 						}, bReplace);
+				var oMasterList = this.getView().byId("idOrderMasterList");
+				if(jQuery.device.is.phone){
+					oMasterList.removeSelections(true);
+				}
 		},
-		orderItemPress : function(oEvent) {
-			var oMasterList = this.getView().byId("idOrderMasterList");
+		orderItemPress : function(oEvent) {			
 			var aItem = oEvent.getParameter("listItem");
-			oMasterList.setSelectedItem(aItem, true);
 			this.showDetail(aItem);
 		},
 		getRouter : function() {
