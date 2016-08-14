@@ -13,7 +13,7 @@ sap.ui.define([
 
 		onInit: function (oEvent) {
 			var that = this;
-			if(jQuery.device.is.phone){
+			if(sap.ui.Device.system.phone){
 				this.getView().byId("idCustomer").setShowNavButton(false);
 			}
 			sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(function(oEvent) {

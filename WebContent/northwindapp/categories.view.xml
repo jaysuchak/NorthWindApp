@@ -2,14 +2,14 @@
 	<Page id="idCategoriesPage" showHeader="false" >
 		<content>
 			<Label id="idCategories" text="Categories" textAlign="Center" class="lable"/>
- 			<TileContainer id="idCategoriesContainer" tiles="{/value}" height="40%">
+ 			<TileContainer id="idCategoriesContainer" tiles="{/value}" height="15rem">
 				<StandardTile id="idCategoryTiles" class="standardTile"
 					title="{Description}" icon="sap-icon://meal" info="{CategoryName}"
 					number="{CategoryID}" numberUnit="Category ID" press="onPressCategory"
 					infoState="Success" />
 			</TileContainer>
 			<Label id="idProducts" text="" textAlign="Center" class="lable" />
-			<TileContainer id="idProductContainer" tiles="{/value}" height="40%">
+			<TileContainer id="idProductContainer" tiles="{/value}" height="15rem">
 				<StandardTile id="idProductTiles" class="standardTile"
 					number="{ProductID}" numberUnit="Product ID"
 					title="{UnitsInStock} X {QuantityPerUnit}" icon="sap-icon://meal"

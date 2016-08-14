@@ -11,14 +11,14 @@ sap.ui.define([
 	var PageController = Controller.extend("northwind.northwindapp.products", {
 		onInit: function (oEvent) {
 			var that = this;
-			if(jQuery.device.is.phone){
+			if(sap.ui.Device.system.phone){
 				this.getView().byId("idProducts").setShowNavButton(false);
 			}
 			sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(function(oEvent) {
 				var sName = oEvent.getParameter("name");
 				if (sName === "supplierProducts") {
 					var oSplitApp = that.getRouter()._findSplitApp(that.getView());
-					if(!(jQuery.device.is.phone)){
+					if(!(sap.ui.Device.system.phone)){
 						oSplitApp.mAggregations._navMaster.setVisible(false);	
 					}
 					productId = oEvent.getParameter("arguments").supplierProductId;

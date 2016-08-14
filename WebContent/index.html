@@ -20,13 +20,28 @@
 	})(this);
 	sap.ui.getCore().attachInit(function() {
 		var height;
-		if(jQuery.device.is.phone){
-			height="92.5%";	
-		}else{
+		if (sap.ui.Device.system.phone) {
+			if (sap.ui.Device.orientation.landscape) {
+				height="87%";
+			} else {
+				height="92.5%";
+			}
+		} else {
 			height="95%";
-		}			
+		}
+		sap.ui.Device.orientation.attachHandler(function(oEvt) {
+			if (sap.ui.Device.system.phone) {
+				if (sap.ui.Device.orientation.landscape) {
+					sap.ui.getCore().byId("idNorthwind").setHeight("87%");
+				} else {
+					sap.ui.getCore().byId("idNorthwind").setHeight("92.5%");
+				}
+			} else {
+				sap.ui.getCore().byId("idNorthwind").setHeight("95%");
+			}
+		});
 		var shell = new sap.m.Shell({
-			app : new sap.ui.core.ComponentContainer({
+			app : new sap.ui.core.ComponentContainer('idNorthwind',{
 				height : height,
 				name : "northwind"
 			})

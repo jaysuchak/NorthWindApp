@@ -15,7 +15,7 @@ sap.ui.define([
 	var PageController = Controller.extend("northwind.northwindapp.order", {
 		onInit: function (oEvent) {
 			var that = this;
-			if(jQuery.device.is.phone){
+			if(sap.ui.Device.system.phone){
 				this.getView().byId("idPageOrder").setShowNavButton(false);
 			}
 			sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(function(oEvent) {
@@ -28,7 +28,7 @@ sap.ui.define([
 				sName = oEvent.getParameter("name");
 				if (sName == "order"){
 					that.getView().byId("idPageOrder").setTitle("Order "+orderId);
-					if(!(jQuery.device.is.phone)){
+					if(!(sap.ui.Device.system.phone)){
 						that.getView().byId("idPageOrder").setShowNavButton(true);
 					}									
 					var url = "http://services.odata.org/V4/Northwind/Northwind.svc/Orders("+orderId+")";

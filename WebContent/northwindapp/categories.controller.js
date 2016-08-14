@@ -7,6 +7,13 @@ sap.ui.controller("northwind.northwindapp.categories", {
 */
 	onInit: function() {
 		sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(this.onRouteMatched, this);
+		if (sap.ui.Device.system.phone) {
+			this.getView().byId("idCategoriesContainer").setHeight("15rem");
+			this.getView().byId("idProductContainer").setHeight("15rem");
+		} else {
+			this.getView().byId("idCategoriesContainer").setHeight("25rem");
+			this.getView().byId("idProductContainer").setHeight("25rem");
+		}
 		var url = "http://services.odata.org/V4/Northwind/Northwind.svc/Categories";		 
 		var JSONModel = new sap.ui.model.json.JSONModel();
 		this.getView().byId("idCategoriesContainer").setModel(JSONModel);

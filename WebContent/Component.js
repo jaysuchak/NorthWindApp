@@ -162,36 +162,37 @@ sap.ui.core.UIComponent.extend("northwind.Component",{
 			}
 		},
 		init : function() {
-			sap.ui.core.UIComponent.prototype.init.apply(this,arguments);
-			// set i18n model
-			var i18nModel = new sap.ui.model.resource.ResourceModel(
-					{
-						bundleUrl : "i18n/messageBundle.properties"
-					}
-			);
-			this.setModel(i18nModel, "i18n");
-			var configModel = new sap.ui.model.json.JSONModel(
-				{
-					splitAppMode: "ShowHideMode",
-					tags: []
-				}
-			);
-			configModel.setDefaultBindingMode("OneWay");
-			this.setModel(configModel, "config");
-			// set device model
-			var deviceModel = new sap.ui.model.json.JSONModel(
-					{
-						isTouch: sap.ui.Device.support.touch,
-						isNoTouch: !sap.ui.Device.support.touch,
-						isPhone: sap.ui.Device.system.phone,
-						isNoPhone: !sap.ui.Device.system.phone,
-						listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
-						listItemType: sap.ui.Device.system.phone ? "Active"	: "Inactive"
-					}
-			);
-			deviceModel.setDefaultBindingMode("OneWay");
-			this.setModel(deviceModel, "device");
+			sap.ui.core.UIComponent.prototype.init.apply(this,arguments);			
 			this.getRouter().initialize();
 		}
 	}
 );
+
+/*// set i18n model
+var i18nModel = new sap.ui.model.resource.ResourceModel(
+		{
+			bundleUrl : "i18n/messageBundle.properties"
+		}
+);
+this.setModel(i18nModel, "i18n");
+var configModel = new sap.ui.model.json.JSONModel(
+	{
+		splitAppMode: "ShowHideMode",
+		tags: []
+	}
+);
+configModel.setDefaultBindingMode("OneWay");
+this.setModel(configModel, "config");
+// set device model
+var deviceModel = new sap.ui.model.json.JSONModel(
+		{
+			isTouch: sap.ui.Device.support.touch,
+			isNoTouch: !sap.ui.Device.support.touch,
+			isPhone: sap.ui.Device.system.phone,
+			isNoPhone: !sap.ui.Device.system.phone,
+			listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
+			listItemType: sap.ui.Device.system.phone ? "Active"	: "Inactive"
+		}
+);
+deviceModel.setDefaultBindingMode("OneWay");
+this.setModel(deviceModel, "device");*/
