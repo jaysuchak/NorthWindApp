@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="northwind.northwindapp.categories" height="100%">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="northwind.northwindapp.categories" >
 	<Page id="idCategoriesPage" showHeader="false" >
 		<content>
 			<Label id="idCategories" text="Categories" textAlign="Center" class="lable"/>

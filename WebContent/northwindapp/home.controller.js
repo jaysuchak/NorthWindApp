@@ -6,7 +6,7 @@ sap.ui.controller("northwind.northwindapp.home", {
 	* @memberOf northwindapp.categories
 	*/
 //		onInit: function() {
-//
+//			
 //		},
 		navBack: function(){
 			this.getRouter().myNavBack();

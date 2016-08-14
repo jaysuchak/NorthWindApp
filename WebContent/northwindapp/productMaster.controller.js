@@ -30,8 +30,9 @@ sap.ui.controller("northwind.northwindapp.productMaster",
 								productId = oEvent.getParameter("arguments").productId;
 								productName = oEvent.getParameter("arguments").productName;								
 								if(!(jQuery.device.is.phone)){
-									/*oMasterList.setSelectedItem(aItems[0], true);*/
 									this.showDetail(aItems[0]);	
+								}else {
+									oMasterList.removeSelections(true);
 								}								
 							} else if (oEvent.getParameter("arguments").orderProductId) {
 								productId = oEvent.getParameter("arguments").orderProductId;

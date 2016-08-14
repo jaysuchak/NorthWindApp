@@ -19,10 +19,16 @@
 			window.top.location = window.location;
 	})(this);
 	sap.ui.getCore().attachInit(function() {
+		var height;
+		if(jQuery.device.is.phone){
+			height="93%";	
+		}else{
+			height="95%";
+		}			
 		var shell = new sap.m.Shell({
 			app : new sap.ui.core.ComponentContainer({
 				url : "http://localhost:8081/NorthWindApp",
-				height : "95%",
+				height : height,
 				name : "northwind"
 			})
 		}).placeAt("content");

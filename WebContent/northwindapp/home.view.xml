@@ -1,7 +1,7 @@
 <core:View xmlns:core="sap.ui.core" xmlns:UIComponent="sap.ui.core.UIComponent"
-	xmlns="sap.m" displayBlock="true" controllerName="northwind.northwindapp.home">
+	xmlns="sap.m" displayBlock="true" controllerName="northwind.northwindapp.home" >
 	<Page id="idSplitAppPage" showHeader="true" showNavButton="true"
-		navButtonPress="navBack" title="Northwind">
+		navButtonPress="navBack" title="Northwind" >
 		<content>
 			<SplitApp id="idAppControl" />
 		</content>
@@ -21,3 +21,4 @@
 	<Text text="Lorem ipsum" /> </u:paneContent> <u:curtainContent> <Label text="curtainContent" 
 	/> </u:curtainContent> <u:curtainPaneContent> <Label text="curtainPaneContent" 
 	/> </u:curtainPaneContent> </u:Shell> </mvc:View> -->
+	<!-- height="95%" -->
