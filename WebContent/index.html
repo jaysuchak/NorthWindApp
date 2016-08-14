@@ -29,6 +29,14 @@
 		} else {
 			height="95%";
 		}
+		var shell = new sap.m.Shell({
+			app : new sap.ui.core.ComponentContainer('idNorthwind',{
+				height : height,
+				name : "northwind"
+			})
+		}).placeAt("content");
+		shell.addStyleClass("myShell");
+		
 		sap.ui.Device.orientation.attachHandler(function(oEvt) {
 			if (sap.ui.Device.system.phone) {
 				if (sap.ui.Device.orientation.landscape) {
@@ -40,13 +48,6 @@
 				sap.ui.getCore().byId("idNorthwind").setHeight("95%");
 			}
 		});
-		var shell = new sap.m.Shell({
-			app : new sap.ui.core.ComponentContainer('idNorthwind',{
-				height : height,
-				name : "northwind"
-			})
-		}).placeAt("content");
-		shell.addStyleClass("myShell");
 	});
 </script>
 </head>
