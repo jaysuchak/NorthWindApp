@@ -11,6 +11,9 @@ sap.ui.define([
 	var PageController = Controller.extend("northwind.northwindapp.products", {
 		onInit: function (oEvent) {
 			var that = this;
+			if(jQuery.device.is.phone){
+				this.getView().byId("idProducts").setShowNavButton(false);
+			}
 			sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(function(oEvent) {
 				var sName = oEvent.getParameter("name");
 				if (sName === "supplierProducts") {

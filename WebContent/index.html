@@ -5,7 +5,7 @@
 <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
 <script id="sap-ui-bootstrap" type="text/javascript"
 	src="./resources/sap-ui-cachebuster/sap-ui-core.js"
-	data-sap-ui-libs="sap.m, sap.ui.layout, sap.suite.ui.commons, sap.ui.unified, sap.ui.ux3"
+	data-sap-ui-libs="sap.m"
 	data-sap-ui-xx-bindingSyntax="complex" 
 	data-sap-ui-appCacheBuster="./"
 	data-sap-ui-theme="sap_bluecrystal"
@@ -21,13 +21,12 @@
 	sap.ui.getCore().attachInit(function() {
 		var height;
 		if(jQuery.device.is.phone){
-			height="93%";	
+			height="92.5%";	
 		}else{
 			height="95%";
 		}			
 		var shell = new sap.m.Shell({
 			app : new sap.ui.core.ComponentContainer({
-				url : "http://localhost:8081/NorthWindApp",
 				height : height,
 				name : "northwind"
 			})

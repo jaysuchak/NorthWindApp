@@ -18,6 +18,9 @@ sap.ui.define([
 
 		onInit: function (oEvent) {
 			var that = this;
+			if(jQuery.device.is.phone){
+				this.getView().byId("idEmployee").setShowNavButton(false);
+			}
 			sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(function(oEvent) {
 				sName = oEvent.getParameter("name");
 				if (sName == "employee"){				

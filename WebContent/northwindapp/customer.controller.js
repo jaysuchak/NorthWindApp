@@ -13,6 +13,9 @@ sap.ui.define([
 
 		onInit: function (oEvent) {
 			var that = this;
+			if(jQuery.device.is.phone){
+				this.getView().byId("idCustomer").setShowNavButton(false);
+			}
 			sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(function(oEvent) {
 				productId = oEvent.getParameter("arguments").orderProductId;
 				productName = oEvent.getParameter("arguments").orderProductName;
