@@ -26,6 +26,12 @@
 			} else {
 				height="92.5%";
 			}
+		} else if(sap.ui.Device.system.tablet){
+			if (sap.ui.Device.orientation.landscape) {
+				height="93.5%";
+			} else {
+				height="95%";
+			}
 		} else {
 			height="95%";
 		}
@@ -44,7 +50,13 @@
 				} else {
 					sap.ui.getCore().byId("idNorthwind").setHeight("92.5%");
 				}
-			} else {
+			}else if(sap.ui.Device.system.tablet){
+				if (sap.ui.Device.orientation.landscape) {
+					sap.ui.getCore().byId("idNorthwind").setHeight("93.5%");
+				} else {
+					sap.ui.getCore().byId("idNorthwind").setHeight("95%");
+				}
+			}else {
 				sap.ui.getCore().byId("idNorthwind").setHeight("95%");
 			}
 		});
