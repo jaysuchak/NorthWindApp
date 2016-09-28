@@ -5,7 +5,7 @@
 			<f:Form id="idSupplierChange" minWidth="1024"
 				maxContainerCols="2" editable="true">
 				<f:title>
-					<core:Title text="Address" />
+					<core:Title />
 				</f:title>
 				<f:layout>
 					<f:ResponsiveGridLayout labelSpanL="3"
